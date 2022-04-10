@@ -27,10 +27,10 @@ function checksCreateTodosUserAvailability(request, response, next) {
   const { user } = request
 
   if (user.pro || (!user.pro && user.todos.length < 10)) {
-    return next()
+    return next();
   }
 
-  return response.status(403).json({ error: 'Todo not exists' })
+  return response.status(403).json({ error: 'Todo not exists' });
 }
 
 function checksTodoExists(request, response, next) {
